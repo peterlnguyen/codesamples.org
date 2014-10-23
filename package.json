@@ -13,6 +13,6 @@
     "grunt-coffeelint": "0.0.13"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --recursive"
+    "test": "./node_modules/mocha/bin/mocha ./test/ --recursive"
   }
 }
