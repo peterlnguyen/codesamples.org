@@ -2,7 +2,7 @@ module.exports = (grunt) ->
 
   grunt.loadNpmTasks "grunt-coffeelint"
 
-  grunt.initConfig(
+  grunt.initConfig
     coffeelint:
       app: [
         "src/*.coffee",
@@ -11,8 +11,6 @@ module.exports = (grunt) ->
       tests: [
         "tests/*/*.coffee"
       ]
-  )
 
   grunt.registerTask "default", "coffeelint"
   grunt.registerTask "travis", "lint"
-
