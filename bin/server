@@ -1,0 +1,17 @@
+#!/usr/bin/env coffee
+cson = require "cson"
+Server = require "../src/server"
+
+[_, script, name] = process.argv
+
+if name?
+  cson.parseFile "./env/#{name}/#{name}.cson", (err, configuration) ->
+    if err
+      console.error "Error opening file #{name}: #{err}"
+      process.exit(-1)
+    else
+      Server.run configuration
+else
+  {basename} = require "path"
+  console.error "USAGE: #{basename script} <environment>"
+  process.exit(-1)

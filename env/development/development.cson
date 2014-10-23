@@ -1,0 +1,12 @@
+server:
+  address: "127.0.0.1"
+  port: 8080
+db:
+  postgres:
+    address: "127.0.0.1"
+    port: 5432
+    username: "admin"
+    password: "password"
+  redis:
+    address: "127.0.0.1"
+    port: 6379

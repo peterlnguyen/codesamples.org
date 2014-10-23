@@ -1,0 +1,12 @@
+{
+  "name": "codesamples.org",
+  "title": "codesamples.org",
+  "author": "",
+  "dependencies": {
+    "express": "~4.0.0",
+    "coffee-script": "latest",
+    "mocha": "^2.0.0",
+    "jasmine": "^2.0.1",
+    "cson": "^1.6.1"
+  }
+}

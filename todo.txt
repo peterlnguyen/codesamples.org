@@ -1,0 +1,5 @@
+- create modular router
+- write tests
+  - setup travis
+- move from makefile to grunt
+- investigate class/instances in server
