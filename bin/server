@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 cson = require "cson"
-Server = require "../src/server"
+Server = require "../src/server/server"
 
 [_, script, name] = process.argv
 

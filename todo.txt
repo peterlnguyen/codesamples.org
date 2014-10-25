@@ -1,6 +1,25 @@
+todo
+=======================
 - create modular router
 - write tests
   - setup travis
 - move from makefile to grunt
-  - explore gulp?
 - investigate class/instances in server
+- logging service (logentries, loggly)
+- newrelic monitoring
+
+
+=======================
+in progress
+=======================
+
+
+=======================
+won't fix
+=======================
+- explore gulp? 
+
+
+=======================
+done
+=======================

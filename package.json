@@ -10,7 +10,8 @@
     "cson": "^1.6.1",
     "grunt": "^0.4.5",
     "coffeelint": "^1.6.1",
-    "grunt-coffeelint": "0.0.13"
+    "grunt-coffeelint": "0.0.13",
+    "github": "^0.2.2"
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha ./test/ --recursive"
