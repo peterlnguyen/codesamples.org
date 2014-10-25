@@ -2,6 +2,7 @@
 cson = require "cson"
 Server = require "../src/server/server"
 
+
 [_, script, name] = process.argv
 
 if name?

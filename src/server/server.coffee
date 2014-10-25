@@ -9,6 +9,9 @@ module.exports = class Server
   @run: (configuration) ->
     (new @ configuration).run()
 
+  @close: ->
+    @app.close()
+
   constructor: (@configuration) ->
     {@server, @db} = @configuration
     @app = express()
