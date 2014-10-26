@@ -7,6 +7,7 @@ todo
 - investigate class/instances in server
 - logging service (logentries, loggly)
 - newrelic monitoring
+- global before and after mocha
 
 
 =======================

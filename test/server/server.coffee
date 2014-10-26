@@ -1,5 +1,6 @@
 assert = require "assert"
 http = require "http"
+require "../setup/server"
 
 
 describe "/", ->

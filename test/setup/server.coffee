@@ -1,4 +1,4 @@
-Server = require "../src/server/server"
+Server = require "../../src/server/server"
 
 
 describe "server", ->
@@ -10,5 +10,5 @@ describe "server", ->
       else
         Server.run configuration
 
-  after ->
-    Server.close()
+#  after ->
+#    server.close()

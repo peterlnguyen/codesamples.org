@@ -11,9 +11,10 @@
     "grunt": "^0.4.5",
     "coffeelint": "^1.6.1",
     "grunt-coffeelint": "0.0.13",
-    "github": "^0.2.2"
+    "github": "^0.2.2",
+    "assert": "^1.1.2"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./test/ --recursive"
+    "test": "./node_modules/mocha/bin/mocha ./test/ --recursive --compilers coffee:coffee-script/register"
   }
 }
