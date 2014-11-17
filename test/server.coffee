@@ -1,11 +1,11 @@
 Server = require "../src/server/server"
-{configuration: {server}} = global
+server = new Server global.configuration
 
 module.exports =
 
   describe "server", ->
     before "run", ->
-      Server.run server
+      server.run()
 
     after "close", ->
-      Server.close()
+      server.close()

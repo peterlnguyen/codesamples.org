@@ -5,11 +5,14 @@ Server = require "../../src/server/server"
 {address, port} = global.configuration.server
 
 
-before "start server", ->
-  Server.run {address, port}
+server = new Server global.configuration
 
-after "close server", ->
-  Server.close
+#before "start server", ->
+#  console.log server
+#  server.run()
+#
+#after "close server", ->
+#  server.close()
 
 describe "/", ->
   it "should return 200", (done) ->
