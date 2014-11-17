@@ -10,7 +10,7 @@ module.exports = class Server
     (new @ configuration).run()
 
   @close: ->
-    @app?.close()
+    @this_server?.close()
 
   load_routers: (routers, app) ->
     for key, value of routers
@@ -22,7 +22,10 @@ module.exports = class Server
     @load_routers routers, @app
 
   run: ->
-    server = @app.listen(@server.port)
-    server.on "listening", =>
-      {address, port} = server.address()
+    @this_server = @app.listen(@server.port)
+    @this_server.on "listening", =>
+      {address, port} = @this_server.address()
       console.log "Web server running on #{address}:#{port}"
+
+  close: ->
+    @this_server?.close()
