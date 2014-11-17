@@ -1,7 +1,7 @@
 express = require "express"
 router = express.Router()
 routers = require "../routers/main"
-cson = require "cson-safe"
+cson = require "cson"
 
 
 module.exports = class Server
