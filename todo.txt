@@ -1,18 +1,17 @@
 todo
 =======================
 - create modular router
-- write tests
-  - setup travis
 - move from makefile to grunt
 - investigate class/instances in server
 - logging service (logentries, loggly)
 - newrelic monitoring
-- global before and after mocha
 
 
 =======================
 in progress
 =======================
+- create github model (now testing)
+- write tests
 
 
 =======================
@@ -24,3 +23,5 @@ won't fix
 =======================
 done
 =======================
+- global before and after with server running mocha
+- setup travis

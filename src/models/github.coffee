@@ -4,14 +4,16 @@ module.exports = class Github
 
   constructor: ->
     @github = new GithubApi
-      version: "3.0.0",
-      debug: true,
-      protocol: "https",
+      version: "3.0.0"
+      debug: true
+      protocol: "https"
+      #pathPrefix: "/api/v3"
 
-  # search for trending repos
-  @search_repos: (query, callback) ->
+  # search for trending repos based on stars
+  search_repos: (query, callback) ->
     msg =
       q: query
-      sort: "desc"
+      sort: "stars"
+      order: "desc"
       page: 5
-    @github.repos msg, callback
+    @github.search.repos msg, callback
