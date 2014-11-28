@@ -18,5 +18,8 @@
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha ./test/ --recursive --compilers coffee:coffee-script/register --require test/setup/test-helper.coffee test/server/server.coffee"
+  },
+  "devDependencies": {
+    "grunt-mocha-test": "^0.12.4"
   }
 }
