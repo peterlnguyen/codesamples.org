@@ -1,3 +1,9 @@
+default_options = (src) ->
+  options:
+    reporter: "spec"
+    require: "coffee-script/register"
+  src: src
+
 module.exports = (grunt) ->
 
   require('load-grunt-tasks')(grunt)
@@ -14,30 +20,9 @@ module.exports = (grunt) ->
       ]
 
     mochaTest:
-
-      test:
-        options:
-          reporter: "spec"
-          require: "coffee-script/register"
-        src: [
-          "test/**/*.coffee"
-        ]
-
-      "test-functional":
-        options:
-          reporter: "spec"
-          require: "coffee-script/register"
-        src: [
-          "test/functional/**/*.coffee"
-        ]
-
-      "test-unit":
-        options:
-          reporter: "spec"
-          require: "coffee-script/register"
-        src: [
-          "test/unit/**/*.coffee"
-        ]
+      test: default_options ["test/**/*.coffee"]
+      "test-functional": default_options ["test/functional/**/*.coffee"]
+      "test-unit": default_options ["test/unit/**/*.coffee"]
 
 
   grunt.registerTask "default", "coffeelint"

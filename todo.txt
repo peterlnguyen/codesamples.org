@@ -25,3 +25,4 @@ done
 =======================
 - global before and after with server running mocha
 - setup travis
+- split grunt tests (functional, unit, etc)
