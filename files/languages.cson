@@ -1,0 +1,119 @@
+name: "string"
+  subtype: ["arm", "mips", "x86"]
+  extensions: ["s79", "s82", "s90", "asm", "s"]
+  alt_names: ["assembly", "x86"]
+  formatted_name: "OCaml"
+
+
+languages:
+ 
+  a:
+    actionscript
+    ada
+    applescript
+    arc
+    assembly
+
+  b: {}
+
+  c:
+    c
+    c++
+    caml
+    clojure
+    cobol
+    coffeescript
+    coldfusion
+
+  d:
+    d
+    dart
+
+  e:
+    erlang
+
+  f:
+    f
+    f#
+    forth
+    fortran
+
+  g:
+    go
+    groovy
+
+  h:
+    haskell
+
+  i: {}
+
+  j:
+    java
+    javascript
+    julia
+
+  k: {}
+
+  l:
+    latex
+    lisp
+      common, scheme, emacs, racket
+    lua
+
+  m:
+    machinecode
+    matlab
+
+  n:
+
+  o:
+    ocaml
+    opencl
+
+  p:
+    pascal
+    perl
+    php
+    postscript
+    powershell
+    processing
+    prolog
+    python
+
+  q: {}
+
+  r:
+    r
+    ruby
+    rust
+
+  s:
+    shell
+      bash, zsh, fish
+    scala
+    smalltalk
+    sml
+    sql
+    swift
+
+  t:
+    typescript
+
+  u: {}
+
+  v:
+    vbscript
+    verilog
+    vhdl
+    visualbasic
+      vba
+
+  w:
+    wolfram
+
+  x:
+    xslt
+
+  y: {}
+
+  z: {}

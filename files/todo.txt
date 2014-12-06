@@ -1,0 +1,67 @@
+todo
+=======================
+- business logic:
+  - create a list of languages to poll
+  - create list of file extensions to recognize (e.g. c: .cc, .cpp, .cp, .cxx)
+  - ensure the languages are supported on github
+
+- data requirements:
+  - elasticsearch mappings
+  - postgres schemas
+  - corresponding schema between elasticsearch and postgres
+    - e.g. should postgres know where an object is in elasticsearch (via foreign key)?
+
+- data retrieval workflow:
+  1. chron job: every week, query github for trending repos for each language
+    - store repo metadata in postgres
+  2. wget every compressed repo for every language
+    - update repo metadata to show downloaded status
+  3. comb through repo, pulling only appropriate files with correct extensions
+    - store those sample code files (e.g. "util.js") into elasticsearch
+    - need to figure out a way to limit/filter files (e.g. max of 25mb, count 5 files)
+    - cross-index these files from postgres to elasticsearch.  
+      mark down filename, id, and ES _id, _type, _id (to uniquely identify).
+
+- viewing
+  - hover over image shows unclickable, formatted code as text
+  - previous and next
+
+
+- create modular router
+- move from makefile to grunt
+- investigate class/instances in server
+- logging service (logentries, loggly)
+- newrelic monitoring
+
+- databases
+  - elasticache: file storage and search
+  - postgres/sqlite: metadata on repos, languages, searches
+  - redis: sessions and caching
+
+
+=======================
+in progress
+=======================
+- create github model (now testing)
+- write tests
+
+
+=======================
+won't fix
+=======================
+- explore gulp? 
+
+
+=======================
+done
+=======================
+- global before and after with server running mocha
+- setup travis
+- split grunt tests (functional, unit, etc)
+
+
+=======================
+resources
+=======================
+- redis: https://redislabs.com/pricing
+- elasticache: https://facetflow.com/#plans
