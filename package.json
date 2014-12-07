@@ -1,7 +1,7 @@
 {
   "name": "codesamples.org",
   "title": "codesamples.org",
-  "author": "",
+  "author": "peterlongnguyen@gmail.com",
   "dependencies": {
     "express": "~4.0.0",
     "coffee-script": "latest",
@@ -15,7 +15,8 @@
     "assert": "^1.1.2",
     "chai": "^1.10.0",
     "load-grunt-tasks": "^1.0.0",
-    "cron": "^1.0.5"
+    "cron": "^1.0.5",
+    "pg": "^4.1.0"
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha ./test/ --recursive --compilers coffee:coffee-script/register --require test/setup/test-helper.coffee test/server/server.coffee"

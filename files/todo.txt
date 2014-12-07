@@ -1,5 +1,13 @@
 todo
 =======================
+- src/cron/fetch-repos: need to iterate through languages object and feed into fetch_repos_request
+  - how to persist iterator and keep track of location?
+- finish up cron first! (fetch for each language --> store in postgres)
+- src/models/postgres:
+  - confirm process.current_env works
+  - confirm singleton works
+- create modular router
+
 - business logic:
   - create a list of languages to poll
   - create list of file extensions to recognize (e.g. c: .cc, .cpp, .cp, .cxx)
@@ -17,27 +25,21 @@ todo
   2. wget every compressed repo for every language
     - update repo metadata to show downloaded status
   3. comb through repo, pulling only appropriate files with correct extensions
-    - store those sample code files (e.g. "util.js") into elasticsearch
+  4. store those sample code files (e.g. "util.js") into elasticsearch
     - need to figure out a way to limit/filter files (e.g. max of 25mb, count 5 files)
-    - cross-index these files from postgres to elasticsearch.  
+    - use node-exec to execute bash script to `find ./ -iname *.coffee`
+    - http://stackoverflow.com/questions/7464036/node-js-shell-script-and-arguments
+  5. cross-index these files from postgres to elasticsearch.  
       mark down filename, id, and ES _id, _type, _id (to uniquely identify).
 
 - viewing
   - hover over image shows unclickable, formatted code as text
   - previous and next
 
-
-- create modular router
-- move from makefile to grunt
-- investigate class/instances in server
-- logging service (logentries, loggly)
-- newrelic monitoring
-
 - databases
   - elasticache: file storage and search
   - postgres/sqlite: metadata on repos, languages, searches
   - redis: sessions and caching
-
 
 =======================
 in progress
@@ -58,6 +60,8 @@ done
 - global before and after with server running mocha
 - setup travis
 - split grunt tests (functional, unit, etc)
+- investigate class/instances in server
+- move from makefile to grunt
 
 
 =======================
@@ -65,3 +69,5 @@ resources
 =======================
 - redis: https://redislabs.com/pricing
 - elasticache: https://facetflow.com/#plans
+- logging service (logentries, loggly)
+- newrelic monitoring

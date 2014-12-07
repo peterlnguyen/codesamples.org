@@ -12,6 +12,7 @@ if name?
       process.exit(-1)
     else
       server = new Server configuration
+      process.current_env = name
       server.run()
 else
   {basename} = require "path"

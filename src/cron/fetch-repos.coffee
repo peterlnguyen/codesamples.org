@@ -15,10 +15,12 @@ num_languages = languages.languages.length
 minutes_required = Math.ceil(num_languages/seconds_per_request)
 
 fetch_repos_job = new CronJob "00-19 00-#{minutes_required} 03 * * 02", ->
+  # need to iterate through languages and feed into fetch_repos_request
   fetch_repos_request language
 , null, true, "America/Los_Angeles"
 
 fetch_repos_request = (language) ->
   search_query = "language: #{language}"
   github.search_repos search_query, (err, res) ->
+    # store to postgres
     console.log err, res
