@@ -24,3 +24,10 @@ fetch_repos_request = (language) ->
   github.search_repos search_query, (err, res) ->
     # store to postgres
     console.log err, res
+
+
+map_object_to_array = (obj) ->
+  obj.map (language) -> language.
+
+get_next_language = (languages) ->
+  
