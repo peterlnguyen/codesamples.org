@@ -10,6 +10,9 @@ class Postgres =
     postgres.connect con_string, (err, client, done) ->
       # do something
       
+  # should parsing be done here?  should caller just pass in simplistically-formatted data?
+  store: () ->
+    # parse, interpolate variables into sql statement
 
 # singleton because only connect once
 pg = new Postgres
