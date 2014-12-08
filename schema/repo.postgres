@@ -1,0 +1,40 @@
+CREATE SCHEMA codesamples;
+CREATE TABLE owners;
+CREATE TABLE repositories;
+CREATE TABLE elasticsearch_metadata;
+
+INSERT INTO owners 
+(login, owner_id, avatar_url, gravatar_id, url, received_events_url, type)
+VALUES
+(#{login}, #{owner_id}, #{avatar_url}, #{gravatar_id}, #{url}, #{received_events_url}, #{type})
+;
+
+INSERT INTO repositories 
+(repo_id, name, full_name, owner_id, private, html_url, description, fork, url,  
+created_at, updated_at, pushed_at, homepage, size, stargazers_count, watchers_count, 
+language, forks_count, open_issues_count, master_branch, default_branch, score)
+VALUES 
+(#{repo_id}, #{name}, #{full_name}, #{owner_id}, #{private}, ... )
+;
+
+INSERT INTO elasticsearch_metadata
+(repo_id, es_id, es_type, es_uid)
+VALEUS
+(#{repo_id})
+;
+
+
+- table "owners":
+  repo_id: id
+  (include all data)
+
+- table "repositories":
+  (include all data)
+  owner_id: id
+
+- table "elasticsearch_metadata":
+  repo_id: id
+  es_id: _id
+  es_type: _type
+  es_uid: _uid (optional)
+

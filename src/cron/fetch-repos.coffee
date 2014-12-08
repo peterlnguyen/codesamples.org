@@ -23,11 +23,13 @@ fetch_repos_request = (language) ->
   search_query = "language: #{language}"
   github.search_repos search_query, (err, res) ->
     # store to postgres
-    console.log err, res
-
+#    parsed_data = parse_results res
+#    pg_model.store res, (err, res) ->
+#      console.log "something bad happened"
+#    console.log err, res
 
 map_object_to_array = (obj) ->
-  obj.map (language) -> language.
+  for language in obj.[a..z]
 
 get_next_language = (languages) ->
   

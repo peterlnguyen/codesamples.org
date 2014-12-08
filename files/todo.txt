@@ -30,7 +30,7 @@ todo
     - use node-exec to execute bash script to `find ./ -iname *.coffee`
     - http://stackoverflow.com/questions/7464036/node-js-shell-script-and-arguments
   5. cross-index these files from postgres to elasticsearch.  
-      mark down filename, id, and ES _id, _type, _id (to uniquely identify).
+      mark down filename, id, and ES _id, _type (to uniquely identify).
 
 - viewing
   - hover over image shows unclickable, formatted code as text
