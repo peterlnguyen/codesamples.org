@@ -22,6 +22,8 @@ max_language_index = languages_array.length
 # cron job running once a week at minimally-required time to fetch all languages
 fetch_repos_job = new CronJob "00-19 00-#{minutes_required} 03 * * 02", ->
   # need to iterate through languages and feed into fetch_repos_request
+  # TODO: memoize day; if current_day is DIFFERENT, reset current_language_index
+  # temporarily keep track of fetched_languages in redis instead?
   if current_language_index > max_language_index
     fetch_repos_request language
 , null, true, "America/Los_Angeles"
