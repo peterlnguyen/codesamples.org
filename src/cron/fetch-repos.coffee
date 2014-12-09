@@ -14,9 +14,16 @@ assert.true(seconds_per_request >= 3, "github search API rate limited to 20 per 
 num_languages = languages.languages.length
 minutes_required = Math.ceil(num_languages/seconds_per_request)
 
+# convert two-layered languages object to array for manual cursor iteration
+languages_array = object_to_array languages
+current_language_index = 0
+max_language_index = languages_array.length
+
+# cron job running once a week at minimally-required time to fetch all languages
 fetch_repos_job = new CronJob "00-19 00-#{minutes_required} 03 * * 02", ->
   # need to iterate through languages and feed into fetch_repos_request
-  fetch_repos_request language
+  if current_language_index > max_language_index
+    fetch_repos_request language
 , null, true, "America/Los_Angeles"
 
 fetch_repos_request = (language) ->
@@ -28,8 +35,9 @@ fetch_repos_request = (language) ->
 #      console.log "something bad happened"
 #    console.log err, res
 
-map_object_to_array = (obj) ->
-  for language in obj.[a..z]
-
-get_next_language = (languages) ->
-  
+object_to_array = (languages) ->
+  flattened_languages = []
+  for letter_category in languages
+    for language in letter_category
+      flattened_languages.push language
+  flattened_languages
