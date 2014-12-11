@@ -18,15 +18,28 @@ minutes_required = Math.ceil(num_languages/seconds_per_request)
 languages_array = object_to_array languages
 current_language_index = 0
 max_language_index = languages_array.length
+last_cron_time = null
 
 # cron job running once a week at minimally-required time to fetch all languages
-fetch_repos_job = new CronJob "00-19 00-#{minutes_required} 03 * * 02", ->
-  # need to iterate through languages and feed into fetch_repos_request
-  # TODO: memoize day; if current_day is DIFFERENT, reset current_language_index
-  # temporarily keep track of fetched_languages in redis instead?
+fetch_repos_job = new CronJob "*/3 00-#{minutes_required} 03 * * 02", ->
+  # if starting a new cron cycle, record current time
+  if current_language_index == 0
+    last_cron_time = new Date().getTime()
+  # continue processing languages until you hit end
   if current_language_index > max_language_index
     fetch_repos_request language
+    current_language_index++
+  # once you hit end of languages, use a wait-limit to stop fetching
+  if current_language_index <= max_language_index
+    difference = get_difference_in_hours(last_cron_time, new Date().getTime())
+    # wait-limit is set to 72 hours, but could be anything above ~1 minute
+    if difference_in_hours > 72
+      current_language_index = 0
 , null, true, "America/Los_Angeles"
+
+get_difference_in_hours = (time_behind, time_ahead)
+    difference = time_ahead - time_behind
+    difference_in_hours = (difference/(1000*60*60))%24
 
 fetch_repos_request = (language) ->
   search_query = "language: #{language}"
