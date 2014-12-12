@@ -37,7 +37,7 @@ fetch_repos_job = new CronJob "*/3 00-#{minutes_required} 03 * * 02", ->
       current_language_index = 0
 , null, true, "America/Los_Angeles"
 
-get_difference_in_hours = (time_behind, time_ahead)
+get_difference_in_hours = (time_behind, time_ahead) ->
     difference = time_ahead - time_behind
     difference_in_hours = (difference/(1000*60*60))%24
 
@@ -46,9 +46,11 @@ fetch_repos_request = (language) ->
   github.search_repos search_query, (err, res) ->
     # store to postgres
 #    parsed_data = parse_results res
-#    pg_model.store res, (err, res) ->
-#      console.log "something bad happened"
 #    console.log err, res
+
+store_repos = (results, callback) ->
+#    pg_model.store res, (callback) ->
+#      console.log "something bad happened"
 
 object_to_array = (languages) ->
   flattened_languages = []
