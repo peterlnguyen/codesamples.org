@@ -4,6 +4,8 @@ cson = require "cson"
 languages = cson.parseFile "../../files/languages"
 Github = require "../models/github"
 github = new Github
+# postgres is a singleton
+postgres = require "../models/postgres"
 
 
 # rate limit is 20 per minute, doing 12 to be safe
@@ -49,7 +51,7 @@ fetch_repos_request = (language) ->
 #    console.log err, res
 
 store_repos = (results, callback) ->
-#    pg_model.store res, (callback) ->
+#    postgres.store res, (callback) ->
 #      console.log "something bad happened"
 
 object_to_array = (languages) ->
