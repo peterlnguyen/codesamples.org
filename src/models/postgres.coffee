@@ -1,6 +1,6 @@
 postgres = require "pg"
 cson = require "cson"
-config = cson.parseFiler("../../env/#{process.current_env}/#{process.current_env}")
+config = cson.parseFiler("../../env/#{process.custom_env}/#{process.current_env}")
 {address, port, username, password} = config.db.postgres
 con_string = "postgres://#{username}:#{password}@#{address}:#{port}/#{database}"
 
@@ -11,7 +11,7 @@ class Postgres =
       # do something
       
   # should parsing be done here?  should caller just pass in simplistically-formatted data?
-  store: () ->
+  store: (results, callback) ->
     # parse, interpolate variables into sql statement
 
 # singleton because only connect once

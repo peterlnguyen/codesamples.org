@@ -3,8 +3,10 @@ todo
 - OBJECTIVE: get basic data flow done:  cron pulls data, store to postgres
 - finish up cron first! (fetch for each language --> store in postgres)
   - make sure cron works!
-- src/cron/fetch-repos: need to iterate through languages object and feed into fetch_repos_request
-  - how to persist iterator and keep track of location?
+- split cron job into helper file, need to write unit tests for helper
+
+- create logger class, grab loggly info
+
 - src/models/postgres:
   - confirm process.current_env works
   - confirm singleton works
