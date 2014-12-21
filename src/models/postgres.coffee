@@ -1,7 +1,9 @@
 postgres = require "pg"
 cson = require "cson"
-config = cson.parseFiler("../../env/#{process.custom_env}/#{process.current_env}")
-{address, port, username, password} = config.db.postgres
+#config = cson.parseFileSync("./env/#{process.custom_env}/#{process.custom_env}.cson")
+# FIXME: need to pass in env variables
+config = cson.parseFileSync("./env/development/development.cson")
+{address, port, username, password, database} = config.database.postgres
 con_string = "postgres://#{username}:#{password}@#{address}:#{port}/#{database}"
 
 

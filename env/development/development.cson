@@ -1,7 +1,7 @@
 server:
   address: "127.0.0.1"
   port: 8080
-db:
+database:
   postgres:
     address: "127.0.0.1"
     port: 5432

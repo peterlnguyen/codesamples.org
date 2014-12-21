@@ -5,7 +5,14 @@ todo
   - make sure cron works!
 - split cron job into helper file, need to write unit tests for helper
 
-- create logger class, grab loggly info
+CURRENTLY (as of sunday midnight, dec 21):
+  - trying to get `coffee src/cron/fetch-repos.coffee` to work
+    - need to fix languages.cson or fake data
+
+
+- testing:
+  - need to export custom_env for models/postgres
+  - create logger class, grab loggly info
 
 - src/models/postgres:
   - confirm process.current_env works
