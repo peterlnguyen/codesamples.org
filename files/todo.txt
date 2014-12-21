@@ -7,7 +7,7 @@ todo
 
 CURRENTLY (as of sunday midnight, dec 21):
   - trying to get `coffee src/cron/fetch-repos.coffee` to work
-    - need to fix languages.cson or fake data
+    - got languages_file flattened, need to move function from fetch-repos to helper
 
 
 - testing:
