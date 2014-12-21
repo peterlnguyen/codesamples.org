@@ -4,6 +4,7 @@ config = cson.parseFiler("../../env/#{process.custom_env}/#{process.current_env}
 {address, port, username, password} = config.db.postgres
 con_string = "postgres://#{username}:#{password}@#{address}:#{port}/#{database}"
 
+
 class Postgres
 
   constructor: ->

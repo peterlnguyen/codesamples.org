@@ -1,5 +1,6 @@
 Github = require "../models/github"
 
+
 module.exports = class CronHelper
 
   constructor: ->

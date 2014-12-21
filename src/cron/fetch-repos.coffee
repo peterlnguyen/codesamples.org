@@ -22,7 +22,8 @@ max_language_index = languages_array.length
 last_cron_time = null
 
 # cron job running once a week at minimally-required time to fetch all languages
-fetch_repos_job = new CronJob "*/3 00-#{minutes_required} 03 * * 02", ->
+#fetch_repos_job = new CronJob "*/3 00-#{minutes_required} 03 * * 02", ->
+fetch_repos_job = new CronJob "* * * * * *", ->
   # if starting a new cron cycle, record current time
   if current_language_index == 0
     last_cron_time = new Date().getTime()

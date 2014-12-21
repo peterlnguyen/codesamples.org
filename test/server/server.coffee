@@ -3,7 +3,6 @@ http = require "http"
 Server = require "../../src/server/server"
 {address, port} = global.configuration.server
 
-
 server = new Server global.configuration
 
 before "start server", ->
