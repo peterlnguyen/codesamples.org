@@ -28,9 +28,9 @@ module.exports = class CronHelper
         else
           #@logger.log "postgres store repos success: #{pg_res}"
 
-  flatten_languages_file: (languages_file) ->
+  flatten_languages_obj: (languages_obj) ->
     languages_flattened = []
-    for letter_category, languages_by_letter of languages_file.languages
+    for letter_category, languages_by_letter of languages_obj.languages
       for language_name, language of languages_by_letter
         languages_flattened.push language
     return languages_flattened

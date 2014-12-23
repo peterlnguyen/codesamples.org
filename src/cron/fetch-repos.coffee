@@ -15,16 +15,15 @@ assert.ok(seconds_per_request >= 3, "github search API rate limited to 20 per se
 # calculate how many minutes to run cron
 num_languages = languages_file.languages.length
 languages_flattened = []
-languages_flattened = cron_helper.flatten_languages_file languages_file
+languages_flattened = cron_helper.flatten_languages_obj languages_file
 
 console.log languages_flattened
 #console.log Object.keys(languages_file.languages).length
 minutes_required = Math.ceil(num_languages/seconds_per_request)
 
 # convert two-layered languages object to array for manual cursor iteration
-languages_array = cron_helper.object_to_array languages_file.languages
 current_language_index = 0
-max_language_index = languages_array.length
+max_language_index = languages_flattened.length
 last_cron_time = null
 
 # cron job running once a week at minimally-required time to fetch all languages

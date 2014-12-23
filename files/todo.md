@@ -5,9 +5,9 @@ todo
   - make sure cron works!
 - split cron job into helper file, need to write unit tests for helper
 
-CURRENTLY (as of sunday midnight, dec 21):
+  ### CURRENTLY (as of sunday midnight, dec 21):
   - trying to get `coffee src/cron/fetch-repos.coffee` to work
-    - got languages_file flattened, need to move function from fetch-repos to helper
+    - ~~got languages_file flattened, need to move function from fetch-repos to helper~~
     - i should write a quick unit test for the flatten method -- to always reconcile languages file
 
 
