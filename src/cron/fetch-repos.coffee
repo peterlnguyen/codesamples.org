@@ -14,11 +14,8 @@ assert.ok(seconds_per_request >= 3, "github search API rate limited to 20 per se
 
 # calculate how many minutes to run cron
 num_languages = languages_file.languages.length
-
 languages_flattened = []
-for letter_category, languages_by_letter of languages_file.languages
-  for language_name, language of languages_by_letter
-    languages_flattened.push language
+languages_flattened = cron_helper.flatten_languages_file languages_file
 
 console.log languages_flattened
 #console.log Object.keys(languages_file.languages).length
